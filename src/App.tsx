@@ -91,7 +91,7 @@ export default function App() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-md w-full bg-white rounded-3xl shadow-xl shadow-indigo-100 p-8 text-center"
+          className="max-w-md w-full bg-white rounded-3xl shadow-xl shadow-brand/10 p-8 text-center"
         >
           <div className="mb-6 flex justify-center">
             <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center">
@@ -107,7 +107,7 @@ export default function App() {
               setIsSubmitted(false);
               setFormData(INITIAL_DATA);
             }}
-            className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold transition-all duration-200 shadow-lg shadow-indigo-200"
+            className="w-full py-3.5 bg-brand hover:bg-brand-dark text-white rounded-xl font-semibold transition-all duration-200 shadow-lg shadow-brand/20"
           >
             Register Another Student
           </button>
@@ -124,10 +124,10 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center justify-center p-2 bg-indigo-50 rounded-2xl mb-4"
+            className="inline-flex items-center justify-center p-2 bg-brand-light rounded-2xl mb-4"
           >
-            <GraduationCap className="w-6 h-6 text-indigo-600 mr-2" />
-            <span className="text-indigo-700 font-semibold text-sm uppercase tracking-wider">शिष्यवृत्ती परीक्षा २०२६</span>
+            <GraduationCap className="w-6 h-6 text-brand mr-2" />
+            <span className="text-brand-dark font-semibold text-sm uppercase tracking-wider">शिष्यवृत्ती परीक्षा २०२६</span>
           </motion.div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
             NATIONAL LEVEL COMPITITION SCIENCE AND MATHS
@@ -165,7 +165,7 @@ export default function App() {
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="विद्यार्थ्याचे नाव - वडिलांचे नाव - आडनाव"
-                    className={`w-full px-4 py-3 rounded-xl border ${errors.fullName ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
+                    className={`w-full px-4 py-3 rounded-xl border ${errors.fullName ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-brand'} focus:ring-4 focus:ring-brand/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                   />
                   {errors.fullName && <p className="text-red-500 text-xs mt-1 ml-1">{errors.fullName}</p>}
                 </div>
@@ -177,7 +177,7 @@ export default function App() {
                       name="standard"
                       value={formData.standard}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-xl border appearance-none ${errors.standard ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 bg-white`}
+                      className={`w-full px-4 py-3 rounded-xl border appearance-none ${errors.standard ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-brand'} focus:ring-4 focus:ring-brand/10 outline-none transition-all duration-200 bg-white`}
                     >
                       <option value="">इयत्ता निवडा</option>
                       <option value="Grade 5">इयत्ता ५ वी</option>
@@ -202,7 +202,7 @@ export default function App() {
                       value={formData.schoolName}
                       onChange={handleChange}
                       placeholder="शाळेचे नाव टाका"
-                      className={`w-full px-4 py-3 rounded-xl border ${errors.schoolName ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
+                      className={`w-full px-4 py-3 rounded-xl border ${errors.schoolName ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-brand'} focus:ring-4 focus:ring-brand/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                     />
                   </div>
                   {errors.schoolName && <p className="text-red-500 text-xs mt-1 ml-1">{errors.schoolName}</p>}
@@ -228,7 +228,7 @@ export default function App() {
                     onChange={handleChange}
                     rows={3}
                     placeholder="गाव, तालुका, जिल्हा"
-                    className={`w-full px-4 py-3 rounded-xl border ${errors.address ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400 resize-none`}
+                    className={`w-full px-4 py-3 rounded-xl border ${errors.address ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-brand'} focus:ring-4 focus:ring-brand/10 outline-none transition-all duration-200 placeholder:text-slate-400 resize-none`}
                   />
                   {errors.address && <p className="text-red-500 text-xs mt-1 ml-1">{errors.address}</p>}
                 </div>
@@ -250,7 +250,7 @@ export default function App() {
                           if (errors.whatsappNumber) setErrors(prev => ({ ...prev, whatsappNumber: undefined }));
                         }}
                         placeholder="१० अंकी मोबाईल नंबर"
-                        className={`w-full pl-14 pr-4 py-3 rounded-xl border ${errors.whatsappNumber ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
+                        className={`w-full pl-14 pr-4 py-3 rounded-xl border ${errors.whatsappNumber ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-brand'} focus:ring-4 focus:ring-brand/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                       />
                     </div>
                     {errors.whatsappNumber && <p className="text-red-500 text-xs mt-1 ml-1">{errors.whatsappNumber}</p>}
@@ -272,7 +272,7 @@ export default function App() {
                           if (errors.alternateNumber) setErrors(prev => ({ ...prev, alternateNumber: undefined }));
                         }}
                         placeholder="१० अंकी मोबाईल नंबर"
-                        className={`w-full pl-14 pr-4 py-3 rounded-xl border ${errors.alternateNumber ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
+                        className={`w-full pl-14 pr-4 py-3 rounded-xl border ${errors.alternateNumber ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-brand'} focus:ring-4 focus:ring-brand/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                       />
                     </div>
                     {errors.alternateNumber && <p className="text-red-500 text-xs mt-1 ml-1">{errors.alternateNumber}</p>}
@@ -298,7 +298,7 @@ export default function App() {
                       key={option}
                       className={`relative flex items-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
                         formData.medium === option 
-                          ? 'border-indigo-600 bg-indigo-50/50 ring-4 ring-indigo-500/5' 
+                          ? 'border-brand bg-brand-light/50 ring-4 ring-brand/5' 
                           : 'border-slate-100 bg-slate-50 hover:border-slate-200'
                       }`}
                     >
@@ -311,11 +311,11 @@ export default function App() {
                         className="sr-only"
                       />
                       <div className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${
-                        formData.medium === option ? 'border-indigo-600' : 'border-slate-300'
+                        formData.medium === option ? 'border-brand' : 'border-slate-300'
                       }`}>
-                        {formData.medium === option && <div className="w-2.5 h-2.5 bg-indigo-600 rounded-full" />}
+                        {formData.medium === option && <div className="w-2.5 h-2.5 bg-brand rounded-full" />}
                       </div>
-                      <span className={`font-medium ${formData.medium === option ? 'text-indigo-900' : 'text-slate-600'}`}>
+                      <span className={`font-medium ${formData.medium === option ? 'text-brand-dark' : 'text-slate-600'}`}>
                         {option === 'Marathi' ? 'मराठी' : 'सेमी-इंग्रजी'}
                       </span>
                     </label>
@@ -334,7 +334,7 @@ export default function App() {
             </div>
             <button
               type="submit"
-              className="w-full sm:w-auto px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold text-lg transition-all duration-200 shadow-xl shadow-indigo-200 hover:shadow-indigo-300 flex items-center justify-center group"
+              className="w-full sm:w-auto px-10 py-4 bg-brand hover:bg-brand-dark text-white rounded-2xl font-bold text-lg transition-all duration-200 shadow-xl shadow-brand/20 hover:shadow-brand/30 flex items-center justify-center group"
             >
               Register Now
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
