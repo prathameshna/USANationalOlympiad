@@ -45,22 +45,22 @@ export default function App() {
   const validate = () => {
     const newErrors: Partial<Record<keyof FormData, string>> = {};
     
-    if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
-    if (!formData.standard) newErrors.standard = 'Please select a standard';
-    if (!formData.schoolName.trim()) newErrors.schoolName = 'School name is required';
-    if (!formData.address.trim()) newErrors.address = 'Address is required';
+    if (!formData.fullName.trim()) newErrors.fullName = 'पूर्ण नाव आवश्यक आहे';
+    if (!formData.standard) newErrors.standard = 'कृपया इयत्ता निवडा';
+    if (!formData.schoolName.trim()) newErrors.schoolName = 'शाळेचे नाव आवश्यक आहे';
+    if (!formData.address.trim()) newErrors.address = 'पत्ता आवश्यक आहे';
     
     if (!formData.whatsappNumber) {
-      newErrors.whatsappNumber = 'WhatsApp number is required';
+      newErrors.whatsappNumber = 'व्हॉट्सॲप नंबर आवश्यक आहे';
     } else if (!/^\d{10}$/.test(formData.whatsappNumber)) {
-      newErrors.whatsappNumber = 'Number must be exactly 10 digits';
+      newErrors.whatsappNumber = 'नंबर १० अंकी असणे आवश्यक आहे';
     }
 
     if (formData.alternateNumber && !/^\d{10}$/.test(formData.alternateNumber)) {
-      newErrors.alternateNumber = 'Number must be exactly 10 digits';
+      newErrors.alternateNumber = 'नंबर १० अंकी असणे आवश्यक आहे';
     }
     
-    if (!formData.medium) newErrors.medium = 'Please select an exam medium';
+    if (!formData.medium) newErrors.medium = 'कृपया परीक्षेचे माध्यम निवडा';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -98,9 +98,9 @@ export default function App() {
               <CheckCircle2 className="w-10 h-10 text-green-500" />
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-slate-900 mb-2">Registration Successful!</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-2">नोंदणी यशस्वी झाली!</h2>
           <p className="text-slate-600 mb-8">
-            Thank you for registering for the USA National Olympiad 2026. We have received your application.
+            Thank you for registering for the NATIONAL LEVEL COMPITITION SCIENCE AND MATHS. We have received your application.
           </p>
           <button 
             onClick={() => {
@@ -127,10 +127,10 @@ export default function App() {
             className="inline-flex items-center justify-center p-2 bg-indigo-50 rounded-2xl mb-4"
           >
             <GraduationCap className="w-6 h-6 text-indigo-600 mr-2" />
-            <span className="text-indigo-700 font-semibold text-sm uppercase tracking-wider">Scholarship Exam 2026</span>
+            <span className="text-indigo-700 font-semibold text-sm uppercase tracking-wider">शिष्यवृत्ती परीक्षा २०२६</span>
           </motion.div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-            USA National Olympiad 2026
+            NATIONAL LEVEL COMPITITION SCIENCE AND MATHS
           </h1>
           <p className="text-slate-500 text-lg max-w-lg mx-auto">
             Empowering the next generation of scholars through excellence and opportunity.
@@ -158,20 +158,20 @@ export default function App() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="sm:col-span-2 space-y-2">
-                  <label className="block text-sm font-semibold text-slate-700 ml-1">Student Full Name</label>
+                  <label className="block text-sm font-semibold text-slate-700 ml-1">विद्यार्थ्याचे पूर्ण नाव</label>
                   <input
                     type="text"
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    placeholder="Last Name - First Name - Father’s Name"
+                    placeholder="विद्यार्थ्याचे नाव - वडिलांचे नाव - आडनाव"
                     className={`w-full px-4 py-3 rounded-xl border ${errors.fullName ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                   />
                   {errors.fullName && <p className="text-red-500 text-xs mt-1 ml-1">{errors.fullName}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-slate-700 ml-1">Standard</label>
+                  <label className="block text-sm font-semibold text-slate-700 ml-1">इयत्ता</label>
                   <div className="relative">
                     <select
                       name="standard"
@@ -179,12 +179,12 @@ export default function App() {
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-xl border appearance-none ${errors.standard ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 bg-white`}
                     >
-                      <option value="">Select Grade</option>
-                      <option value="Grade 5">Grade 5</option>
-                      <option value="Grade 6">Grade 6</option>
-                      <option value="Grade 7">Grade 7</option>
-                      <option value="Grade 8">Grade 8</option>
-                      <option value="Grade 9">Grade 9</option>
+                      <option value="">इयत्ता निवडा</option>
+                      <option value="Grade 5">इयत्ता ५ वी</option>
+                      <option value="Grade 6">इयत्ता ६ वी</option>
+                      <option value="Grade 7">इयत्ता ७ वी</option>
+                      <option value="Grade 8">इयत्ता ८ वी</option>
+                      <option value="Grade 9">इयत्ता ९ वी</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                       <ArrowRight className="w-4 h-4 text-slate-400 rotate-90" />
@@ -194,14 +194,14 @@ export default function App() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-slate-700 ml-1">School Name</label>
+                  <label className="block text-sm font-semibold text-slate-700 ml-1">शाळेचे नाव</label>
                   <div className="relative">
                     <input
                       type="text"
                       name="schoolName"
                       value={formData.schoolName}
                       onChange={handleChange}
-                      placeholder="Enter school name"
+                      placeholder="शाळेचे नाव टाका"
                       className={`w-full px-4 py-3 rounded-xl border ${errors.schoolName ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                     />
                   </div>
@@ -221,13 +221,13 @@ export default function App() {
 
               <div className="space-y-6">
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-slate-700 ml-1">Full Address</label>
+                  <label className="block text-sm font-semibold text-slate-700 ml-1">पूर्ण पत्ता</label>
                   <textarea
                     name="address"
                     value={formData.address}
                     onChange={handleChange}
                     rows={3}
-                    placeholder="Village, Taluka, District"
+                    placeholder="गाव, तालुका, जिल्हा"
                     className={`w-full px-4 py-3 rounded-xl border ${errors.address ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400 resize-none`}
                   />
                   {errors.address && <p className="text-red-500 text-xs mt-1 ml-1">{errors.address}</p>}
@@ -235,7 +235,7 @@ export default function App() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="block text-sm font-semibold text-slate-700 ml-1">Parent’s WhatsApp Number</label>
+                    <label className="block text-sm font-semibold text-slate-700 ml-1">पालकांचा व्हॉट्सॲप नंबर</label>
                     <div className="relative">
                       <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center pr-3 border-r border-slate-200">
                         <Phone className="w-4 h-4 text-slate-400" />
@@ -249,7 +249,7 @@ export default function App() {
                           setFormData(prev => ({ ...prev, whatsappNumber: val }));
                           if (errors.whatsappNumber) setErrors(prev => ({ ...prev, whatsappNumber: undefined }));
                         }}
-                        placeholder="10-digit mobile number"
+                        placeholder="१० अंकी मोबाईल नंबर"
                         className={`w-full pl-14 pr-4 py-3 rounded-xl border ${errors.whatsappNumber ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                       />
                     </div>
@@ -257,7 +257,7 @@ export default function App() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-semibold text-slate-700 ml-1">Alternate Parent's No. (Optional)</label>
+                    <label className="block text-sm font-semibold text-slate-700 ml-1">पालकांचा पर्यायी नंबर (पर्यायी)</label>
                     <div className="relative">
                       <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center pr-3 border-r border-slate-200">
                         <Phone className="w-4 h-4 text-slate-400" />
@@ -271,7 +271,7 @@ export default function App() {
                           setFormData(prev => ({ ...prev, alternateNumber: val }));
                           if (errors.alternateNumber) setErrors(prev => ({ ...prev, alternateNumber: undefined }));
                         }}
-                        placeholder="10-digit mobile number"
+                        placeholder="१० अंकी मोबाईल नंबर"
                         className={`w-full pl-14 pr-4 py-3 rounded-xl border ${errors.alternateNumber ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-indigo-500'} focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 placeholder:text-slate-400`}
                       />
                     </div>
@@ -291,7 +291,7 @@ export default function App() {
               </div>
 
               <div className="space-y-3">
-                <label className="block text-sm font-semibold text-slate-700 ml-1">Exam Medium</label>
+                <label className="block text-sm font-semibold text-slate-700 ml-1">परीक्षेचे माध्यम</label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {['Marathi', 'Semi-English'].map((option) => (
                     <label 
@@ -316,7 +316,7 @@ export default function App() {
                         {formData.medium === option && <div className="w-2.5 h-2.5 bg-indigo-600 rounded-full" />}
                       </div>
                       <span className={`font-medium ${formData.medium === option ? 'text-indigo-900' : 'text-slate-600'}`}>
-                        {option}
+                        {option === 'Marathi' ? 'मराठी' : 'सेमी-इंग्रजी'}
                       </span>
                     </label>
                   ))}
@@ -330,7 +330,7 @@ export default function App() {
           <div className="p-8 bg-slate-50/50 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center text-slate-500 text-sm">
               <BookOpen className="w-4 h-4 mr-2" />
-              <span>All fields are mandatory for registration</span>
+              <span>नोंदणीसाठी सर्व माहिती भरणे अनिवार्य आहे</span>
             </div>
             <button
               type="submit"
@@ -344,7 +344,7 @@ export default function App() {
 
         {/* Footer Info */}
         <div className="mt-12 text-center text-slate-400 text-sm">
-          <p>© 2026 USA National Olympiad Committee. All rights reserved.</p>
+          <p>© 2026 National Level Competition Committee. All rights reserved.</p>
           <div className="mt-2 flex justify-center space-x-4">
             <a href="#" className="hover:text-indigo-500 transition-colors">Privacy Policy</a>
             <span>•</span>
