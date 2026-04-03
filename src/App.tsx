@@ -100,7 +100,7 @@ export default function App() {
           </div>
           <h2 className="text-2xl font-bold text-slate-900 mb-2">नोंदणी यशस्वी झाली!</h2>
           <p className="text-slate-600 mb-8">
-            Thank you for registering for the NATIONAL LEVEL COMPITITION SCIENCE AND MATHS. We have received your application.
+            Thank you for registering for the USA OLYMPIAD 2026 - SCIENCE & MATHS. We have received your application.
           </p>
           <button 
             onClick={() => {
@@ -129,11 +129,13 @@ export default function App() {
             <GraduationCap className="w-6 h-6 text-brand mr-2" />
             <span className="text-brand-dark font-semibold text-sm uppercase tracking-wider">शिष्यवृत्ती परीक्षा २०२६</span>
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-            NATIONAL LEVEL COMPITITION SCIENCE AND MATHS
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3 flex flex-col items-center">
+            <span>USA OLYMPIAD 2026</span>
+            <span>SCIENCE & MATHS</span>
+            <span className="text-2xl sm:text-3xl text-brand font-bold mt-1">National Level Compitition</span>
           </h1>
-          <p className="text-slate-500 text-lg max-w-lg mx-auto">
-            Empowering the next generation of scholars through excellence and opportunity.
+          <p className="text-slate-500 text-lg max-w-lg mx-auto font-medium">
+            Your First Step Towards NTSE | NEET | JEE | NDA Success
           </p>
         </div>
 
